@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 using TallerVehiculos.Models;
 
 namespace TallerVehiculos.Entidades
@@ -8,7 +9,7 @@ namespace TallerVehiculos.Entidades
         [Key]
         public string Placa { get; set; }
         [Required]
-        public int IdUsuario { get; set; }
+        public string IdUsuario { get; set; }
         [Required]
         public int IdMarca { get; set; }
         [Required]
@@ -21,8 +22,15 @@ namespace TallerVehiculos.Entidades
         [Required]
         [StringLength(50)]
         public string Color { get; set; }
+        [JsonIgnore]
         public IdentityModels IdentityModels { get; set; }
+        [JsonIgnore]
         public Marca Marca { get; set; }
+        [JsonIgnore]
         public TipoVehiculo TipoVehiculo { get; set; }
+        [JsonIgnore]
+        public ICollection<ImagenVehiculo> ImagenVehiculos { get; set; }
+        [JsonIgnore]
+        public ICollection<Historial> Historiales { get; set; }
     }
 }

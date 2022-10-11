@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
+using TallerVehiculos.Models;
 
 namespace TallerVehiculos.Entidades
 {
@@ -15,5 +17,7 @@ namespace TallerVehiculos.Entidades
         [Required]
         [StringLength(20)]
         public string CiudadNacimiento { get; set; }
+        [JsonIgnore]
+        public ICollection<IdentityModels> IdentityModels { get; set; }
     }
 }

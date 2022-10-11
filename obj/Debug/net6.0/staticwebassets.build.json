@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "Xo94gYJM4FbyIAFx5oehFldldWteWwiLs/mOYMfntVw=",
+  "Hash": "b9RTvglrS3xfk6UXGqC/dYfs60vFeLy5jqg2+IKucck=",
   "Source": "TallerVehiculos",
   "BasePath": "_content/TallerVehiculos",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "TallerVehiculos\\wwwroot",
+      "Source": "TallerVehiculos",
+      "ContentRoot": "C:\\Users\\juan.gomez3\\source\\repos\\TallerVehiculos\\wwwroot\\",
+      "BasePath": "_content/TallerVehiculos",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }
