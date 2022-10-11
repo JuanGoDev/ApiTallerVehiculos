@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace TallerVehiculos.Entidades
 {
@@ -12,5 +13,8 @@ namespace TallerVehiculos.Entidades
         public int HorasInvertidas { get; set; }
         [Required]
         public int ValorProcedimiento { get; set; }
+        [JsonIgnore]
+        public ICollection<DetalleHistorial> DetalleHistoriales { get; set; }
+
     }
 }

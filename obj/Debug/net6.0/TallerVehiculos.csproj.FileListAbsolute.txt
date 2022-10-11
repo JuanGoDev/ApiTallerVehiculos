@@ -66,3 +66,5 @@ C:\Users\juan.gomez3\source\repos\TallerVehiculos\obj\Debug\net6.0\refint\Taller
 C:\Users\juan.gomez3\source\repos\TallerVehiculos\obj\Debug\net6.0\TallerVehiculos.pdb
 C:\Users\juan.gomez3\source\repos\TallerVehiculos\obj\Debug\net6.0\TallerVehiculos.genruntimeconfig.cache
 C:\Users\juan.gomez3\source\repos\TallerVehiculos\obj\Debug\net6.0\ref\TallerVehiculos.dll
+C:\Users\juan.gomez3\source\repos\TallerVehiculos\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\juan.gomez3\source\repos\TallerVehiculos\bin\Debug\net6.0\TallerVehiculos.staticwebassets.runtime.json

@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
+using TallerVehiculos.Models;
 
 namespace TallerVehiculos.Entidades
 {
@@ -12,5 +14,7 @@ namespace TallerVehiculos.Entidades
         public int NumeroPuertas { get; set; }
         [Required]
         public int CantidadPasajeros { get; set; }
+        [JsonIgnore]
+        public ICollection<Vehiculo> Vehiculos { get; set; }
     }
 }
