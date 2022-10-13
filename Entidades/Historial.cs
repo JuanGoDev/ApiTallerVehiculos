@@ -8,7 +8,7 @@ namespace TallerVehiculos.Entidades
     {
         public int Id { get; set; }
         [Required]
-        public string Placa { get; set; }
+        public int Placa { get; set; }
         [Required]
         public string IdUsuario { get; set; }
         [JsonIgnore]

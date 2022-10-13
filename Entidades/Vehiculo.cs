@@ -7,7 +7,7 @@ namespace TallerVehiculos.Entidades
     public class Vehiculo
     {
         [Key]
-        public string Placa { get; set; }
+        public int Placa { get; set; }
         [Required]
         public string IdUsuario { get; set; }
         [Required]

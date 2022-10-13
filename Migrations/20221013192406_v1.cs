@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TallerVehiculos.Migrations
 {
-    public partial class version1 : Migration
+    public partial class v1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -110,6 +110,7 @@ namespace TallerVehiculos.Migrations
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Direccion = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Telefono = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IdTipoDocumento = table.Column<int>(type: "int", nullable: true),
@@ -228,7 +229,8 @@ namespace TallerVehiculos.Migrations
                 name: "Vehiculos",
                 columns: table => new
                 {
-                    Placa = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Placa = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     IdUsuario = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     IdMarca = table.Column<int>(type: "int", nullable: false),
                     IdTipoVehiculo = table.Column<int>(type: "int", nullable: false),
@@ -265,7 +267,7 @@ namespace TallerVehiculos.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Placa = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Placa = table.Column<int>(type: "int", nullable: false),
                     IdUsuario = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     TiempoInvertido = table.Column<int>(type: "int", nullable: false)
                 },
@@ -292,7 +294,7 @@ namespace TallerVehiculos.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Placa = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Placa = table.Column<int>(type: "int", nullable: false),
                     FotoVehiculo = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
@@ -302,7 +304,8 @@ namespace TallerVehiculos.Migrations
                         name: "FK_ImagenVehiculos_Vehiculos_Placa",
                         column: x => x.Placa,
                         principalTable: "Vehiculos",
-                        principalColumn: "Placa");
+                        principalColumn: "Placa",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(

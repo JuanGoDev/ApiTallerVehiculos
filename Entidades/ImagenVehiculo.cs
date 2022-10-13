@@ -6,7 +6,7 @@ namespace TallerVehiculos.Entidades
     public class ImagenVehiculo
     {
         public int Id { get; set; }
-        public string Placa { get; set; }
+        public int Placa { get; set; }
         [JsonIgnore]
         public Vehiculo Vehiculo { get; set; }
         [Required]

@@ -64,6 +64,7 @@ namespace TallerVehiculos
                 //Agregamos la seguridad en el Swagger
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
                 {
+                    Description = @"Ejemplo: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng...'",
                     Name = "Authorization",
                     Type = SecuritySchemeType.ApiKey,
                     Scheme = "Bearer",
@@ -109,7 +110,7 @@ namespace TallerVehiculos
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiMedFlix v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiTallerVehiculos v1"));
             }
 
             app.UseHttpsRedirection();
