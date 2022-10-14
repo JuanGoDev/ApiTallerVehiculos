@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 using TallerVehiculos.Entidades;
 using TallerVehiculos.Models;
 
@@ -20,8 +21,11 @@ namespace TallerVehiculos.DTOs
         [Required]
         [StringLength(50)]
         public string Color { get; set; }
+        [JsonIgnore]
         public IdentityModels IdentityModels { get; set; }
+        [JsonIgnore]
         public Marca Marca { get; set; }
+        [JsonIgnore]
         public TipoVehiculo TipoVehiculo { get; set; }
     }
 }

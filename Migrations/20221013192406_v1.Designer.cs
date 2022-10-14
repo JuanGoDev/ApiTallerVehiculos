@@ -12,14 +12,14 @@ using TallerVehiculos.Data;
 namespace TallerVehiculos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221010234827_version1")]
-    partial class version1
+    [Migration("20221013192406_v1")]
+    partial class v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.9")
+                .HasAnnotation("ProductVersion", "6.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -271,9 +271,8 @@ namespace TallerVehiculos.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Placa")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Placa")
+                        .HasColumnType("int");
 
                     b.Property<int>("TiempoInvertido")
                         .HasColumnType("int");
@@ -300,8 +299,8 @@ namespace TallerVehiculos.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("Placa")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Placa")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -413,8 +412,11 @@ namespace TallerVehiculos.Migrations
 
             modelBuilder.Entity("TallerVehiculos.Entidades.Vehiculo", b =>
                 {
-                    b.Property<string>("Placa")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Placa")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Placa"), 1L, 1);
 
                     b.Property<string>("AgenciaTransito")
                         .IsRequired()
@@ -455,12 +457,18 @@ namespace TallerVehiculos.Migrations
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
                     b.Property<string>("Direccion")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("IdTipoDocumento")
                         .HasColumnType("int");
 
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Telefono")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasIndex("IdTipoDocumento");
@@ -561,7 +569,9 @@ namespace TallerVehiculos.Migrations
                 {
                     b.HasOne("TallerVehiculos.Entidades.Vehiculo", "Vehiculo")
                         .WithMany("ImagenVehiculos")
-                        .HasForeignKey("Placa");
+                        .HasForeignKey("Placa")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Vehiculo");
                 });
