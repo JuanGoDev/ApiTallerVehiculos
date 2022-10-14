@@ -20,6 +20,7 @@ C:\Users\juan.gomez3\source\repos\TallerVehiculos\bin\Debug\net6.0\Microsoft.Ent
 C:\Users\juan.gomez3\source\repos\TallerVehiculos\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\juan.gomez3\source\repos\TallerVehiculos\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\juan.gomez3\source\repos\TallerVehiculos\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\juan.gomez3\source\repos\TallerVehiculos\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\juan.gomez3\source\repos\TallerVehiculos\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\juan.gomez3\source\repos\TallerVehiculos\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\juan.gomez3\source\repos\TallerVehiculos\bin\Debug\net6.0\Microsoft.Identity.Client.dll
@@ -68,4 +69,3 @@ C:\Users\juan.gomez3\source\repos\TallerVehiculos\obj\Debug\net6.0\refint\Taller
 C:\Users\juan.gomez3\source\repos\TallerVehiculos\obj\Debug\net6.0\TallerVehiculos.pdb
 C:\Users\juan.gomez3\source\repos\TallerVehiculos\obj\Debug\net6.0\TallerVehiculos.genruntimeconfig.cache
 C:\Users\juan.gomez3\source\repos\TallerVehiculos\obj\Debug\net6.0\ref\TallerVehiculos.dll
-C:\Users\juan.gomez3\source\repos\TallerVehiculos\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
